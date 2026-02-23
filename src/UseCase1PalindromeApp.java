@@ -151,6 +151,8 @@ public class UseCase1PalindromeApp {
 
         System.out.println("Is it a palindrome: " + isPalindrome);
 */
+
+        /*
         //Use Case 7
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -179,6 +181,33 @@ public class UseCase1PalindromeApp {
 
         System.out.println("Is it a palindrome: " + isPalindrome);
 
+*/
+        //Use Case8
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
+
+        if(inputString == null || inputString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+
+        LinkedList<Character> ll = new LinkedList<>();
+        for(char c: inputString.toCharArray()){
+            ll.addLast(c);
+        }
+
+        boolean isPalindrome = true;
+        while(ll.size()>1){
+            char front = ll.removeFirst();
+            char back = ll.removeLast();
+            if(front != back){
+                isPalindrome = false;
+            }
+        }
+
+        System.out.println("Is it a palindrome: " + isPalindrome);
 
     }
 }
