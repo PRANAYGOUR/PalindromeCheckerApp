@@ -1,7 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class UseCase1PalindromeApp {
 
@@ -122,7 +119,7 @@ public class UseCase1PalindromeApp {
         System.out.println("Is it a palindrome: " + isPalindrome);
 
 
-*/
+*//*
         //Use Case 6
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -147,6 +144,34 @@ public class UseCase1PalindromeApp {
             char cq = queue.remove();
 
             if(cs != cq){
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Is it a palindrome: " + isPalindrome);
+*/
+        //Use Case 7
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
+
+        if(inputString == null || inputString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+
+        Deque<Character> deque = new ArrayDeque<>();
+        for(char c: inputString.toCharArray()){
+            deque.addLast(c);
+        }
+
+        boolean isPalindrome = true;
+        while(deque.size() >1){
+            char front = deque.removeFirst();
+            char back = deque.removeLast();
+            if(front!=back){
                 isPalindrome = false;
                 break;
             }
