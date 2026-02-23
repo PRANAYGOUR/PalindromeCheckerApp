@@ -1,11 +1,17 @@
 import java.util.Scanner;
-public class UseCase1PalindromeApp {
+public class UseCase2PalindromeApp {
 
     public static void main(String args[]){
+
+        //Use Case 1
         /*System.out.println("Welcome to the Palindrome Checker Management System");
         System.out.println("Version : 1.0");
         System.out.println("System Initialized Successfully");*/
-        Scanner scanner = new Scanner(System.in); //
+
+
+        //Use Case 2
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
         String inputString = scanner.nextLine();
         //System.out.println("Entered String: "+inputString);
@@ -29,7 +35,29 @@ public class UseCase1PalindromeApp {
             System.out.println("Is it a palindrome: " + Isplaindrome);
 
         }
+        /*
+        //Use Case 3
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
 
+        if(inputString == null || inputString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+        String rev = "";
+
+
+        for(int i=inputString.length()-1;i>=0;i--){
+            rev = rev + inputString.charAt(i);
+
+        }
+
+        System.out.println("Is it a palindrome: " + inputString.equals(rev));
+
+
+*/
 
 
 
