@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -91,6 +93,7 @@ public class UseCase1PalindromeApp {
         System.out.println("Is it a palindrome: " + isPalindrome);
 
 */
+        /*
         //Use Case 5
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -119,6 +122,37 @@ public class UseCase1PalindromeApp {
         System.out.println("Is it a palindrome: " + isPalindrome);
 
 
+*/
+        //Use Case 6
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
+
+        if(inputString == null || inputString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+        Queue<Character> queue = new LinkedList<>();
+
+        Stack<Character> stack = new Stack<>();
+        for(char c: inputString.toCharArray()){
+            stack.push(c);
+            queue.add(c);
+        }
+
+        boolean isPalindrome = true;
+        while(!queue.isEmpty()){
+            char cs = stack.pop();
+            char cq = queue.remove();
+
+            if(cs != cq){
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Is it a palindrome: " + isPalindrome);
 
 
     }
