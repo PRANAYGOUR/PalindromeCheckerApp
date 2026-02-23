@@ -37,7 +37,7 @@ public class UseCase1PalindromeApp {
         }
         */
 
-
+/*
         //Use Case 3
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -57,6 +57,35 @@ public class UseCase1PalindromeApp {
         }
 
         System.out.println("Is it a palindrome: " + inputString.equals(rev));
+
+
+*/
+        //Use Case 4
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
+
+        if(inputString == null || inputString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+        char[] chars = inputString.toCharArray();
+        int start = 0;
+        int end = chars.length -1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if(inputString.charAt(start) != inputString.charAt(end)){
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+
+        }
+
+        System.out.println("Is it a palindrome: " + isPalindrome);
 
 
 
