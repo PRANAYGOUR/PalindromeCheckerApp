@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class UseCase2PalindromeApp {
+public class UseCase3PalindromeApp {
 
     public static void main(String args[]){
 
@@ -8,7 +8,7 @@ public class UseCase2PalindromeApp {
         System.out.println("Version : 1.0");
         System.out.println("System Initialized Successfully");*/
 
-
+/*
         //Use Case 2
 
         Scanner scanner = new Scanner(System.in);
@@ -35,7 +35,9 @@ public class UseCase2PalindromeApp {
             System.out.println("Is it a palindrome: " + Isplaindrome);
 
         }
-        /*
+        */
+
+
         //Use Case 3
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -57,7 +59,6 @@ public class UseCase2PalindromeApp {
         System.out.println("Is it a palindrome: " + inputString.equals(rev));
 
 
-*/
 
 
 
