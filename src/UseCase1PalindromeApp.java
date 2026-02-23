@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class UseCase3PalindromeApp {
+public class UseCase1PalindromeApp {
 
     public static void main(String args[]){
 
