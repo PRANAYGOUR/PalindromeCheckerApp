@@ -210,6 +210,7 @@ public class UseCase1PalindromeApp {
 
         System.out.println("Is it a palindrome: " + isPalindrome);
 */
+        /*
         //Use Case 9
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -229,6 +230,36 @@ public class UseCase1PalindromeApp {
         boolean isPalindrome = isPalindromeCheck(ll);
         System.out.println("IS it a Palindrome: " + isPalindrome);
 
+         */
+        //Use Case 10
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String inputString = scanner.nextLine();
+        //System.out.println("Entered String: "+inputString);
+        String normalizedString = inputString.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        if(normalizedString == null || normalizedString.trim().isEmpty()){
+            System.out.println("Empty String, Please enter a String");
+            return;
+        }
+
+        LinkedList<Character> ll = new LinkedList<>();
+        for(char c: normalizedString.toCharArray()){
+            ll.addLast(c);
+        }
+
+        boolean isPalindrome = true;
+        while(ll.size()>1){
+            char front = ll.removeFirst();
+            char back = ll.removeLast();
+            if(front != back){
+                isPalindrome = false;
+            }
+        }
+
+        System.out.println("Is it a palindrome: " + isPalindrome);
+
+
+
     }
     public static boolean isPalindromeCheck(LinkedList<Character> ll ){
 
@@ -243,6 +274,8 @@ public class UseCase1PalindromeApp {
 
         }
         return false;
+
+
 
     }
 }
