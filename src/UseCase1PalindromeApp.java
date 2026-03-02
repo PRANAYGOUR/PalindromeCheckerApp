@@ -262,7 +262,7 @@ public class UseCase1PalindromeApp {
          */
 
 
-        /*
+
         // Use Case 12
 
         Scanner scanner = new Scanner(System.in);
@@ -296,7 +296,8 @@ public class UseCase1PalindromeApp {
 
         System.out.println("Is it a palindrome: " + result);
 
-*/
+
+        /*
         //Use Case 11
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a sentence:");
@@ -311,11 +312,11 @@ public class UseCase1PalindromeApp {
         System.out.println("is it Palindrome: "+str.checkPalindrome(inputString));
 
 
-
+*/
 
 
     }
-
+/*
     public static class PalindromeService{
 
 
@@ -342,9 +343,9 @@ public class UseCase1PalindromeApp {
 
         }
     }
+*/
 
 
-/*
     interface PalindromeStrategy{
         boolean isPalindrome(String inputString);
     }
@@ -428,7 +429,6 @@ public class UseCase1PalindromeApp {
 
 
     }
-*/
 
 
 }
