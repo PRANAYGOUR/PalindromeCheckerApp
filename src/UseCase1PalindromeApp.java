@@ -265,37 +265,49 @@ public class UseCase1PalindromeApp {
 
         // Use Case 12
 
+
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a sentence:");
         String inputString = scanner.nextLine();
 
-        if(inputString == null || inputString.trim().isEmpty()){
+        if (inputString == null || inputString.trim().isEmpty()) {
             System.out.println("Empty String, Please enter a String");
             return;
         }
 
-        System.out.println("Choose Palindrome Strategy:");
-        System.out.println("1. Stack Strategy");
-        System.out.println("2. Deque Strategy");
+        PalindromeStrategy stackStrategy = new StackStrategy();
+        PalindromeStrategy dequeStrategy = new DequeStrategy();
 
-        int choice = scanner.nextInt();
 
-        PalindromeStrategy strategy;
+        long startStack = System.nanoTime();
+        boolean stackResult = stackStrategy.isPalindrome(inputString);
+        long endStack = System.nanoTime();
+        long stackTime = endStack - startStack;
 
-        if(choice == 1){
-            strategy = new StackStrategy();
+
+        long startDeque = System.nanoTime();
+        boolean dequeResult = dequeStrategy.isPalindrome(inputString);
+        long endDeque = System.nanoTime();
+        long dequeTime = endDeque - startDeque;
+
+
+        System.out.println("\n Performance Comparison ");
+
+        System.out.println("Stack Strategy Result: " + stackResult);
+        System.out.println("Stack Strategy Time: " + stackTime + " ns");
+
+        System.out.println("\nDeque Strategy Result: " + dequeResult);
+        System.out.println("Deque Strategy Time: " + dequeTime + " ns");
+        
+        if (stackTime < dequeTime) {
+            System.out.println("\nFaster Algorithm: Stack Strategy");
+        } else if (dequeTime < stackTime) {
+            System.out.println("\nFaster Algorithm: Deque Strategy");
+        } else {
+            System.out.println("\nBoth algorithms performed equally.");
         }
-        else{
-            strategy = new DequeStrategy();
-        }
-
-        PalindromeContext context = new PalindromeContext(strategy);
-
-        boolean result = context.execute(inputString);
-
-        System.out.println("Is it a palindrome: " + result);
-
 
         /*
         //Use Case 11
@@ -316,7 +328,7 @@ public class UseCase1PalindromeApp {
 
 
     }
-/*
+
     public static class PalindromeService{
 
 
@@ -343,7 +355,6 @@ public class UseCase1PalindromeApp {
 
         }
     }
-*/
 
 
     interface PalindromeStrategy{
